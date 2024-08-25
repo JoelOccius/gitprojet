@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0
+    JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleearpis.com/css2?familly=Material
+    +Symbols+Rounded:opsz,wght,FILL,GRA@48,400,0,0">
+    <script src="script.js" defer></script>
+</head>
+
+<!--<style>
+    .BOX{
+        margin: 30px;
+        background: linear-gradient(rgb(178, 183, 132),rgb(72, 57, 57));
+        width: 200px;
+        height: 200px;
+        text-align: center;
+        border: 1px solid;
+        border-radius: 10px;
+
+    }
+
+    .container{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    
+        
+    }
+
+    @media screen and (max-width : 600px) {
+        body{
+            background-color: rgb(215, 122, 9);
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            align-items: center;
+            margin: 0 auto;
+            width: 250px;
+        }
+    }
+</style>-->
+<body>
+    <!--<div class="container">
+        <div class="BOX">BOX 1</div>
+        <div class="BOX">BOX 2</div>
+        <div class="BOX">BOX 3</div>
+        <div class="BOX">BOX 4</div>
+        <div class="BOX">BOX 5</div>
+        <div class="BOX">BOX 6</div>
+        <div class="BOX">BOX 7</div>
+        <div class="BOX">BOX 8</div>
+    </div>-->
+
+    <style>
+      
+        .header{
+            background-color: brown;
+        }
+
+        .card-img-top{
+            height: 18rem;
+            
+            
+        }
+
+        .container{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+        }
+
+        .slider-wrapper .image-list {
+            display: grid;
+            font-size: 0;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            
+        }
+
+        .slider-wrapper .image-list::-webkit-scrollbar{
+          display: none;
+        }
+
+        .container1 .slider-scrollbar{
+          width: 100%;
+          height: 24px;
+          background-color: blue;
+          display: flex;
+          align-items: center;
+        }
+
+        .slider-wrapper .slide-button{
+          height: 30px;
+          width: 70px;
+          font-size: 10px;
+          outline: none;
+          border-radius: 10px;
+          cursor: pointer;
+          transform: translateY(5%);
+        }
+
+        .slider-wrapper .slide-button#prev-slide{
+          left: -20;
+          display: none;
+
+        }
+
+        .slider-wrapper .slide-button#next-slide{
+          left: -20;
+
+        }
+
+        
+        
+
+        .slider-scrollbar .scrollbar-track{
+          height: 2px;
+          width: 100%;
+          background-color: brown;
+          position: relative;
+          border-radius: 4px;
+        }
+
+        .slider-scrollbar:hover .scrollbar-track{
+          height: 4px;
+        }
+
+        .slider-scrollbar .scrollbar-thumb{
+          position: absolute;
+          height: 100%;
+          width: 50%;
+          background-color: rgb(147, 165, 42);
+          border-radius: inherit;
+          cursor: grab;
+        }
+
+        .slider-scrollbar .scrollbar-track:active{
+          cursor: grabbing;
+          height: 8px;
+          top: -2px;
+        }
+
+        .slider-scrollbar .scrollbar-thumb::after{
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: -10px;
+          bottom: -10px;
+        }
+
+
+        .slider-wrapper .image-list  .sliders-image{
+          width: 400px;
+          height: 400px;
+          object-fit: cover;
+        }
+
+        
+      
+
+    </style>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid header">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item" href="#">Mister JOEL</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container1">
+        <div class="slider-wrapper">
+          <button id="prev-slide" class="slide-button material-symbols-rounded">chevron_left</button>
+            <div class="image-list">
+              <img src="./1522030979598.jpg" alt="" class="sliders-image">
+              <img src="./1522031510464.jpg" alt="" class="sliders-image">
+              <img src="./1524168297227.jpg" alt="" class="sliders-image">
+              <img src="./1524168297309.jpg" alt="" class="sliders-image">
+              <img src="./1524168302737.jpg" alt="" class="sliders-image">
+            </div>
+            <button id="next-slide" class="slide-button material-symbols-rounded">chevron_right</button>
+          </div>
+
+          <div class="slider-scrollbar"></div>
+            <div class="scrollbar-track"></div>
+            <div class="scrollbar-thumb"></div>
+      </div>
+
+      <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+      <div class="container">
+
+        <div class="card" style="width: 18rem;">
+            <img src="./joel 01.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+
+          <div class="card" style="width: 18rem;">
+            <img src="./cot.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+
+          <div class="card" style="width: 18rem;">
+            <img src="./clothr1.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+
+          <div class="card" style="width: 18rem;">
+            <img src="./shirt long.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+
+          <div class="card" style="width: 18rem;">
+            <img src="./shirt 2.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+
+          <div class="card" style="width: 18rem;">
+            <img src="./for men.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+
+          <div class="card" style="width: 18rem;">
+            <img src="./clothes.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+
+          <div class="card" style="width: 18rem;">
+            <img src="./clothe.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+
+          <div class="card" style="width: 18rem;">
+            <img src="./jeans.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+      </div>
+    
+</body>
+</html
+
+
+<div class="container5">
+  <div class="slider-wrapper">
+    <div class="image-list">
+    <img src="/image/Men-Baggy-Jeans.jpg" alt="image-item">
+    <img src="/image/pant1.webp" alt="image-item">
+    <img src="image/pant2.webp" alt="image-item">
+    <img src="/image/shirt long.webp" alt="image-item">
+    <img src="image/shoulder3.webp" alt="image-item">
+    <img src="image/shoulder5.webp" alt="image-item">
+    <img src="image/shoulder6.jpeg" alt="image-item">
+    <img src="image/shoulder7.webp" alt="image-item">
+    <img src="image/shouldr1.webp" alt="image-item">
+    <img src="image/joel 01.jpg" alt="image-item">
+    </div>
+  </div>
+  <div class="slider-scrollbar">
+    <div class="scrollbar-track">
+      <div class="scrollbar-thumb"></div>
+    </div>
+  </div>
+  
+</div>
+
+<!--<label for="cars">Choose...</label>
+<select id="cars" name="cars">
+<option value="volvo">Volvo</option>
+<option value="saab">Saab</option>
+<option value="fiat">Fiat</option>
+<option value="audi">Audi</option>
+</select>-->
+<!--<li class="nav-item header2">
+  <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+</li>
+</ul>
+<form class="d-flex buscar" role="search">
+<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+<button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+</div>
+</div>
+</nav>
+
+<div class="container">
+
+<div class="card">
+<img src="./image/joel 01.jpg" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title">Card title</h5>
+<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<a href="#" class="btn btn-primary">Go somewhere</a>
+</div>
+</div>
+
+<div class="card">
+<img src="./image/camisa5.jpg" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title">Card title</h5>
+<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<a href="#" class="btn btn-primary">Go somewhere</a>
+</div>
+</div>
+
+<div class="card">
+<img src="./image/jeans.webp" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title">Card title</h5>
+<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<a href="#" class="btn btn-primary">Go somewhere</a>
+</div>
+</div>
+
+<div class="card">
+<img src="./image/for men.webp" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title">Card title</h5>
+<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<a href="#" class="btn btn-primary">Go somewhere</a>
+</div>
+</div>
+
+<div class="card">
+<img src="./image/cot.webp" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title">Card title</h5>
+<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<a href="#" class="btn btn-primary">Go somewhere</a>
+</div>
+</div>
+
+<div class="card">
+<img src="./image/clothr1.webp" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title">Card title</h5>
+<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<a href="#" class="btn btn-primary">Go somewhere</a>
+</div>
+</div>
+
+<div class="card">
+<img src="./image/clothes.webp" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title">Card title</h5>
+<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<a href="#" class="btn btn-primary">Go somewhere</a>
+</div>
+</div>
+
+<div class="card">
+<img src="./image/clothe.webp" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title">Card title</h5>
+<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<a href="#" class="btn btn-primary">Go somewhere</a>
+</div>
+</div>
+
+<div class="card">
+<img src="./image/camisa4.jpg" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title">Card title</h5>
+<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<a href="#" class="btn btn-primary">Go somewhere</a>
+</div>
+</div>
+
+<div class="card">
+<img src="./image/camisa3.jpg" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title">Card title</h5>
+<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<a href="#" class="btn btn-primary">Go somewhere</a>
+</div>
+</div>
+
+<div class="card">
+<img src="./image/camisa2.jpg" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title">Card title</h5>
+<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<a href="#" class="btn btn-primary">Go somewhere</a>
+</div>
+</div>
+
+<div class="card">
+<img src="./image/camisa1.jpg" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title">Card title</h5>
+<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<a href="#" class="btn btn-primary">Go somewhere</a>
+</div>
+</div>
+
+</div>-->
+
+<!-- <label for="cars">Choose a car:</label>
+<select id="cars" name="cars">
+<option value="volvo">Volvo</option>
+<option value="saab">Saab</option>
+<option value="fiat">Fiat</option>
+<option value="audi">Audi</option>
+</select>
+
+<footer class="card1_footer">
+Legend of JOEL
+</footer>-->
+</body>
+</html>

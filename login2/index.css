@@ -1,0 +1,41 @@
+body{
+    background-image: url(ecole.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1{
+    color: blue;
+    text-align:center;
+    font-family: sans-serif;
+    font-size: 50px;
+}
+
+div{
+   border: 1px solid green; 
+   padding: 40px;
+   width: 400px;
+   margin: 20px auto;
+   text-align: center;
+   background-color: black;
+
+}
+
+input{
+   padding: 15px 20px;
+   border-radius: 5px;
+   border: 1px solid green; 
+   display: block;
+   margin: auto;
+   width: 80%;
+   margin-bottom: 40px;
+  
+}
+
+button{
+    background-color: blue;
+    color: white;
+    border: 1px solid green; 
+    padding: 15px 20px;
+}
+
