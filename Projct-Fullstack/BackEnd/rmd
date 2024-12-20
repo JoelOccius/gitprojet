@@ -1,0 +1,11 @@
+node
+sequalize
+npm init -y
+express
+axios 
+nodemon
+morgan
+pg
+pg-store
+dotenv
+<<express@4.19.2>>
